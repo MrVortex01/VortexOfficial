@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MrVortex - Galéria</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body {
+			background-color: #222;
+			margin: 0;
+			padding: 0;
+		}
+
+		.gallery {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+			align-items: center;
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 40px;
+		}
+
+		.gallery-item {
+			width: 300px;
+			height: 300px;
+			background-color: #1C1C1C;
+			border: 2px solid #4CAF50;
+			margin: 10px;
+			position: relative;
+			overflow: hidden;
+		}
+
+		.gallery-item img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: transform 0.3s;
+		}
+
+		.gallery-item:hover img {
+			transform: scale(1.1);
+		}
+
+		.gallery-item::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		.gallery-item:hover::before {
+			opacity: 1;
+		}
+
+        .kezdolap-link {
+			position: absolute;
+			top: 20px;
+			right: 20px;
+			padding: 10px 20px;
+			background-color: #1C1C1C;
+			color: #FFFFFF;
+			font-size: 18px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: transform 0.3s;
+			z-index: 1;
+			border: 2px solid #4CAF50;
+		}
+	</style>
+</head>
+<body>
+	<header class="header-bar">
+		<h1>A legújabb képeim</h1>
+		<a href="index.html" class="kezdolap-link">Kezdőlap</a>
+	</header>
+	<main>
+		<div class="gallery">
+			<div class="gallery-item">
+				<img src="photo1.jpg" alt="Photo 1">
+			</div>
+			<div class="gallery-item">
+				<img src="photo2.jpg" alt="Photo 2">
+			</div>
+			<div class="gallery-item">
+				<img src="photo3.jpg" alt="Photo 3">
+			</div>
+			<!-- További képek hozzáadása -->
+		</div>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
