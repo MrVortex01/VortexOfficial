@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MrVortex - Kezdőlap</title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		.header-bar {
+			background-color: rgba(0, 0, 0, 0.781);
+			color: #FFFFFF;
+			padding: 20px;
+			box-shadow: 0px 2px 5px rgba(0, 0, 5, 5);
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+		}
+
+		.header-bar:hover {
+			animation-name: frameAnimationIn;
+		}
+
+		.header-bar:not(:hover) {
+			animation-name: frameAnimationOut;
+		}
+
+		@keyframes frameAnimationIn {
+			0% {
+				transform: translateY(0);
+			}
+			100% {
+				transform: translateY(-10px);
+			}
+		}
+
+		@keyframes frameAnimationOut {
+			0% {
+				transform: translateY(-10px);
+			}
+			100% {
+				transform: translateY(0);
+			}
+		}
+
+		.frame {
+			position: absolute;
+			top: 300px; 
+			left: 790px; 
+			width: 300px; 
+			height: 500px; 
+			border: 5px solid #4caf50; 
+			overflow: hidden;
+			animation-duration: 0.5s;
+			animation-fill-mode: forwards;
+			background-color: rgba(0, 0, 0, 0.781);
+		}
+
+		.frame:hover {
+			animation-name: frameAnimationIn;
+			box-shadow: 0px 2px 5px rgba(0, 0, 0, 0);
+			animation-fill-mode: forwards;
+		}
+
+		.frame:not(:hover) {
+			animation-name: frameAnimationOut;
+			animation-fill-mode: forwards;
+		}
+
+		@keyframes frameAnimationIn {
+			0% {
+				transform: scale(1);
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0);
+			}
+			100% {
+				transform: scale(1.05);
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+			}
+		}
+
+		@keyframes frameAnimationOut {
+			0% {
+				transform: scale(1.05);
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+			}
+			100% {
+				transform: scale(1);
+				box-shadow: 0px 2px 5px rgba(0, 0, 0, 0);
+			}
+		}
+
+		.social {
+			font-family: 'Open Sans', sans-serif; 
+			font-size: 50px; 
+			font-weight: bold;
+			color: #2a862d; 
+			margin-bottom: 20px;
+		}
+
+		.button-container {
+			display: flex;
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		button {
+			background-color: #4CAF50;
+			color: #FFFFFF;
+			border: none;
+			padding: 10px 20px;
+			font-size: 18px;
+			border-radius: 5px;
+			cursor: pointer
+			transition: background-color 0.3s;
+			position: relative;
+			z-index: 1;
+		}
+
+		button:hover { 
+			background-color: #2f7c32;
+		}
+
+		h1 {
+			color: #4CAF50;
+		}
+
+		.video-container {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: -1;
+			overflow: hidden;
+		}
+
+		.video-overlay {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.5);
+		}
+
+		.video {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			filter: brightness(75%);
+		}
+
+		.setup-link {
+			position: absolute;
+			top: 20px;
+			right: 50px;
+			padding: 10px 20px;
+			background-color: #1C1C1C;
+			color: #FFFFFF;
+			font-size: 18px;
+			border-radius: 5px;
+			cursor: pointer;
+			transition: transform 0.3s;
+			z-index: 1;
+		}
+
+		.header-bar:hover .setup-link {
+			transform: translate(0);
+		}
+	</style>
+</head>
+<body>
+	<header class="header-bar">
+		<h1>MrVortex</h1>
+		<a href="index2.html" class="setup-link">Képek</a>
+	</header>
+	<main>
+		<div class="frame">
+			<div class="social">Social</div>
+			<div class="button-container">
+				<a href="https://discord.gg/fcm73d9uWr" target="_blank"><button>Discord</button></a>
+				<a href="https://www.instagram.com/mr.vortex_05/" target="_blank"><button>Instagram</button></a>
+				<a href="https://www.twitch.tv/mrvortex0214" target="_blank"><button>Twitch</button></a>
+				<a href="" target="_blank"><button>Facebook</button></a>
+			</div>
+		</div>
+		<div class="video-container">
+			<div class="video-overlay"></div>
+			<video class="video" src="asd.mp4" autoplay loop muted></video> <!-- playsinline / muted -->
+		</div>
+		<div id="facebook-posts"></div>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>
